@@ -1,8 +1,7 @@
 <?php
 
 require_once('db_connection.php');
-?>
-<?php
+
 if(isset($_POST['signup_submit'])){
 	$firstname = $_POST['firstname'];
 	$lastname = $_POST['lastname'];
