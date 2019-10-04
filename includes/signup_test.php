@@ -8,10 +8,12 @@ if(isset($_POST['signup_submit'])){
 	$username = $_POST['username'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$date = date('Y-m-d, H:i:s')
 
-        $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES(?,?,?,?,?)";
-		$stmtinsert = $con->prepare($sql);
-		$result = $stmtinsert->execute([$firstname, $lastname, $username, $email, $password]);
+        $sql = "INSERT INTO users (firstname, lastname, username, email, password, date) VALUES('$firstname', '$lastname', '$username',
+	'$email', '$password', 'date')";
+		$result = $con->query($sql);
+		
 		if($result){
 			echo 'Successfully saved.';
 		}else{
