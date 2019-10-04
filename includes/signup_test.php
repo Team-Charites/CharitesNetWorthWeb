@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+
 require_once('db_connection.php');
 ?>
 <?php
@@ -10,8 +10,8 @@ if(isset($_POST['signup_submit'])){
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
-        $sql = "INSERT INTO users (firstname, lastname, username, email, password, date) VALUES(?,?,?,?,?,?)";
-		$stmtinsert = $database->prepare($sql);
+        $sql = "INSERT INTO users (firstname, lastname, username, email, password) VALUES('$firstname', '$lastname', '$username', '$email', '$password')";
+		$stmtinsert = $con->prepare($sql);
 		$result = $stmtinsert->execute([$firstname, $lastname, $username, $email, $password]);
 		if($result){
 			echo 'Successfully saved.';
