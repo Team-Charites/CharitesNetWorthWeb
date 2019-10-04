@@ -8,7 +8,7 @@ if(isset($_POST['signup_submit'])){
 	$username = $_POST['username'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
-	$date = date('Y-m-d, H:i:s')
+	$date = date('Y-m-d')
 
         $sql = "INSERT INTO users (firstname, lastname, username, email, password, date) VALUES('$firstname', '$lastname', '$username',
 	'$email', '$password', 'date')";
