@@ -11,7 +11,7 @@ if(isset($_POST['signup_submit'])){
 	$date = date('Y-m-d')
 
         $sql = "INSERT INTO users (firstname, lastname, username, email, password, date) VALUES('$firstname', '$lastname', '$username',
-	'$email', '$password', 'date')";
+	'$email', '$password', '$date')";
 		$result = $con->query($sql);
 		
 		if($result){
