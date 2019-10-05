@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
         $id = $row['id'];
         //Add to Session
         $_SESSION['id'] = $id;
-        $_SESSION['name'] = $name;
+        $_SESSION['username'] = $name;
         // addAlert('success', 'You Successfully Logged in');
         //TODO: Repace with `success.php` with success page
         echo "<script type='text/javascript'>document.location='dashboard.php'</script>";
