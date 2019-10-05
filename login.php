@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
         //Get user details from db
         $row = mysqli_fetch_array($query);
         $name = $row['username'];
-        $id = $row['user_id'];
+        $id = $row['id'];
         //Add to Session
         $_SESSION['id'] = $id;
         $_SESSION['name'] = $name;
