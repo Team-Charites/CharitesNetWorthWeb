@@ -7,7 +7,7 @@ $email = $_POST['email'];
 $pwd = $_POST['password'];
 $password = MD5($pwd);
 $sql = "SELECT * FROM users WHERE Email='$email' AND Password='$password'";
-$result = mysqli_query($con, $sql);
+$result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) > 0)
 {
 	while($row = mysqli_fetch_assoc($result))
