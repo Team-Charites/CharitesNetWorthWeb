@@ -60,7 +60,7 @@
 			<div class="img-form">
 			   <img class="img" src="css/img/dollar-resized3.jpg"/>
 			   
-				<form id="log-in" onsubmit="return Validate2()" method="post" name="uform">
+				<form id="log-in" action="login.php" onsubmit="return Validate2()" method="post" name="uform">
 					<div id="username1_div">
 						<input type="text" name="username1" placeholder=" Username" >
 						 <div id="username1_error"></div>
@@ -72,7 +72,7 @@
 
 					</div>
 
-					<input id="login" type="Submit"  value="Sign in">
+					<input id="login" name="login" type="Submit"  value="Sign in">
 
 					<div id="login-alert">
 						<p>Don't have an account?</p>
