@@ -16,6 +16,6 @@ if($num == 1){
 }else{
     $reg= "insert into users(user_firstname, user_lastname, user_username, user_email, user_password) values( '$fname' , '$lname', '$username', '$email', '$pass')";
     mysqli_query($con, $reg);
-    echo" Registration successful! <a href="signup.html">Sign in</a>";
+    echo" Registration successful!";
 }
 ?>
