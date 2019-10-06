@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = mysqli_connect('localhost','root');
+$con = mysqli_connect('bmsyhziszmhf61g1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306','ze8g19ard2iom13t');
 mysqli_select_db($con, 'userregistration');
 $username = $_POST['username1'];
 $pass = $_POST['password1'];
