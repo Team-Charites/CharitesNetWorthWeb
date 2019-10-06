@@ -1,43 +1,58 @@
+*{
+    padding:0;
+    margin :0;
+    box-sizing: border-box;
+    font-size: 12px;
+    
+}
+
+
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
+        
+    }
+    
+
+#logo {
+	max-width: 100%;
+    height: auto;
 }
 
 nav li {
 	display: inline-block;
 	margin-left: 40px;
   }
-
+  
   .navbar-nav .nav-link,
   .navbar-light .navbar-nav .nav-link {
 	color: #fff;
 	/* border-bottom: 2px solid yellow; */
   }
-
+  
   .navbar-nav li:last-child{
 	margin-right: 30px;
   }
-
+  
   .navbar-light .navbar-nav .nav-link:hover,
   .navbar-light .navbar-nav .nav-link:focus {
-	color: #00b300;
-	border-bottom: 1px solid #00b300;
-
+	  color: #00b300;
   }
-
+  
   .navbar-light{
 	background: url(../css/img/header.jpg);
   }
-
+  
   #logo {
 	height: 80px;
 	width: auto;
 	/* float: left; */
 	margin-top: 5px;
 	margin-left: 25px;
-
+	padding: auto;
+  
   }
 
 #data {
@@ -51,21 +66,7 @@ nav li {
 	border-radius: 10px;
 }
 
-#data h3 {
-	width: 90%;
-	margin: auto;
-	margin-top: 30px;
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-#data h5 {
-	width: 90%;
-	margin: auto;
-	margin-bottom: 20px;
-	text-align: center;
-	opacity: 0.4;
-}
+ 
 
 #calculator {
 	width: 95%;
@@ -74,15 +75,6 @@ nav li {
 	flex-direction: row;
 	padding: 5px;
 	justify-content: center;
-}
-
-.deleteButton {
-	background-color: red;
-	color: white;
-	padding: 5px;
-	border: none;
-	border-radius: 5px;
-	outline: none;
 }
 
 .extra {
@@ -116,7 +108,7 @@ nav li {
 	width: 80%;
 	padding: 5px;
 	margin: 30px auto 20px auto;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 }
 
@@ -138,7 +130,7 @@ nav li {
 	height: 40px;
 	font-size: 16px;
 	font-style: normal;
-	font-weight: bold;
+	/* font-weight: bold; */
 	line-height: 22px;
 	border-color: #00B300;
 	outline: none;
@@ -167,17 +159,22 @@ nav li {
 	font-size: 16px;
 }
 
+
 #assets input, #liabilities input {
 	border: 1px solid grey;
 	box-shadow: 2px 4px 8px 0 rgba(0,0,0,0.2);
 	outline: none;
 	height: 25px;
 	box-sizing: border-box;
+	padding: 5px;
+	border-radius: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 #assets input:focus, #liabilities input:focus {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
+} 
 
 #moreAssets button, #moreLiabilities button {
 	background: #00B300;
@@ -190,8 +187,7 @@ nav li {
 	background: #fafcfe;
 }
 
-#moreAssets, #moreLiabilities {
-}
+
 
 .addItems {
 	margin-top: 15px;
@@ -206,12 +202,9 @@ nav li {
 #totalAssets, #totalLiabilities {
 	margin-top: 35px;
 	margin-bottom: 15px;
-	font-size: 16px;
+	font-size: 18px;
 }
 
-#worth {
-
-}
 
 footer {
 	background-color: #333;
@@ -220,24 +213,27 @@ footer {
 	padding-right: 30px;
 	font-size: 80%;
 	margin-top: 20px;
+	
+	
+	
   }
-
+  
   .footer-nav {
 	list-style: none;
 	float: left;
   }
-
-
-
+  
+  
+  
   .footer-nav li {
 	display: inline-block;
 	margin-right: 20px;
   }
-
+  
   .footer-nav li:last-child {
 	margin-right: 0;
   }
-
+  
   .footer-nav li a:link,
   .footer-nav li a:visited, {
 	text-decoration: none;
@@ -246,26 +242,33 @@ footer {
 	-webkit-transition: color 0.3s;
 	transition: color 0.3s;
   }
-
+  
   .footer-nav li a:hover,
   .footer-nav li a:active {
 	color: #ddd;
   }
-
+  
   footer p {
+	padding-left: none;
 	color: #fff;
 	/* text-align: center; */
 	margin-top: 10px;
 	line-height: 2em;
+	
+	
   }
   footer h3{
 	font-size: 22px;
 	color: #00b300;
+	line-height: 2em;
   }
   footer address{
 	font-size: 14px;
 	color: #fefffe;
 	line-height: 2em;
+  }
+  .footer-title{
+	  padding-left: 20px;
   }
 
 
@@ -276,6 +279,7 @@ footer {
 
 	#logo{
 		height : 50px;
+		width: auto;
 	}
 
 	#assets, #liabilities {
@@ -293,16 +297,57 @@ footer {
 @media screen and (max-width: 600px) {
 
 
+}
 
-	#menu {
-		width: 15%;
+	hr {
+		border-color: #00B300;
+		padding-right: 20px;
+		padding-left: 20px;
+		background-color: transparent;
+		margin: 2em;
 	}
 
-	#logo-div {
-		width: 15%;
+	p {
+		text-align: justify;
+		padding-left: 20px;
+		padding-right: 20px;
+		font-size: 16px;
+        position: relative;
+		line-height: 2em;
+		
 	}
-
-	#menu li a {
-		font-size: 12px;
-		font-weight: normal;
+	header{
+		position: fixed;
+		top: 0;
+		width: 100%;
+    }
+    #data h3 {
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        text-align: left;
+        padding-right: 20px;
+		padding-left: 20px;
+		line-height: 2em;
+		font-weight: bold;
+		
+    }
+    
+    #data h5 {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+        text-align: justify;
+        padding-right: 20px;
+        padding-left: 20px;
+		font-size: 13px;
+		line-height: 2em;
+		font-weight: bold;
+        
+	}
+	#data h4 {
+		margin: 1em;
+		line-height: 2em;
+		font-weight: bold;
 }

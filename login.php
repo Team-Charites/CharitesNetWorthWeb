@@ -1,32 +1,16 @@
-<?php session_start();
-//Proper Database configuration here
-include 'includes/db_connection.php';
-include 'includes/functions.php';
-/* 
-    Here we perform the logic for database 
-*/
-if (isset($_POST['login'])) {
-    $email_unsafe = $_POST['email'];
-    $pass_unsafe = $_POST['password'];
-    $email = mysqli_real_escape_string($con, $email_unsafe);
-    $password = mysqli_real_escape_string($con, $pass_unsafe);
-    $query = mysqli_query($con, "SELECT * FROM users WHERE email = '$email' AND password = '$password'") or die(mysqli_error($con));
-    $counter = mysqli_num_rows($query);
-    if ($counter == 0) {
-        addAlert('error', 'Invalid Email or Password! Try again');
-        echo "<script>document.location='signup.html'</script>";
-    } else {
-        //Get user details from db
-        $row = mysqli_fetch_array($query);
-        $name = $row['username'];
-        $id = $row['user_id'];
-        //Add to Session
-        $_SESSION['id'] = $id;
-        $_SESSION['name'] = $name;
-        // addAlert('success', 'You Successfully Logged in');
-        //TODO: Repace with `success.php` with success page
-        echo "<script type='text/javascript'>document.location='dashboard.php'</script>";
-    }
-} else {
-    header('Location signup.html');
+<?php
+session_start();
+$con = mysqli_connect('bmsyhziszmhf61g1.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306','ze8g19ard2iom13t');
+mysqli_select_db($con, 'userregistration');
+$username = $_POST['username1'];
+$pass = $_POST['password1'];
+$s = " select * from users where user_username = '$username' && user_password = '$pass' ";
+$result = mysqli_query($con, $s);
+$num = mysqli_num_rows($result);
+if($num == 1){
+    $_SESSION['username'] = $name;
+    header('location:dashboard.php');
+}else{
+    header('location:signup.html');
 }
+?>

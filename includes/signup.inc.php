@@ -2,9 +2,9 @@
 require("db_connection.php");
 $first_name_check = $last_name_check = $user_name_check = $email_check = $password_check = $confirm_password_check ="";
 $first_name_error = $last_name_error = $email_error = $password_error = $confirm_password_error ="";
-$first_name = $last_name = $email = $password ="";
+$firstname = $lastname = $email = $password ="";
 //SIGN UP PROCESS
-if(isset($_POST["signup"])){
+if(isset($_POST["signup_submit"])){
 	
 	function validateFormData($data){
 	$data = trim($data);
@@ -83,7 +83,7 @@ if(isset($_POST["signup"])){
 		$confirm_password = password_hash( validateFormData($_POST['confirm_password']), PASSWORD_DEFAULT );
 	}
 	
-	$query2 = "SELECT * FROM signup WHERE email = '$email'";
+	$query2 = "SELECT * FROM users WHERE email = '$email'";
 	
 	$result2 = mysqli_query($conn, $query2);
 	
@@ -95,15 +95,15 @@ if(isset($_POST["signup"])){
 	
 		//if (empty($email_error) && empty($password_error)&& empty($last_name_error)&& empty($first_name_error)){
 			if($password_check === $confirm_password_check && $email && $first_name && $last_name && mysqli_num_rows($result2) < 1){
-			$query = "INSERT INTO signup (id, first_name, last_name, email, password, signup_date)
-						VALUES (NULL, '$first_name', '$last_name', '$email', '$password',  CURRENT_TIMESTAMP)";
+			$query = "INSERT INTO signup (id, firstname, lastname, email, password, date)
+						VALUES (NULL, '$firstname', '$lastname', '$email', '$password',  CURRENT_TIMESTAMP)";
 				
 				
 			
 			if(mysqli_query($conn, $query)){
 				session_start();
 				$_SESSION['calcuser'] = $email;
-				//header("Location: calculator.php");
+				//header("Location: calculator.html");
 				echo 'REGD_SUCCESS';
 			}else{
 				
