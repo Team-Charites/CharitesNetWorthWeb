@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -9,9 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="css/signup.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	<title>Login & Signup Page</title>
-	<?php 
-            include 'includes/functions.php';
-            echo showAlert(); ?>
+
 
 </head>
 
@@ -29,7 +26,7 @@
 						<a class="nav-link" href="index.php">HOME</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="signup.html">SIGN UP</a>
+						<a class="nav-link" href="signup.php">SIGN UP</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="calculator.php">CALCULATOR</a>
@@ -46,64 +43,8 @@
 
 	<div id="container">
 
-
-		<div id="form-container">
-
-
-			<!-- <div class="header-links">
-				<a href="#">What?</a>
-			</div> -->
-
-			<div class="img-form">
-			   <img class="img" src="css/img/dollar-resized3.jpg"/>
-			   
-				<form id="register" action="signup.php" method="post" onsubmit="return Validate1()" name="vform">
-				<div id="firstname_div">
-					<input type="text" name="firstname" placeholder="Firstname" value="<?php echo $fname; ?>"  required="">
-					<div id="fname_error"><?php echo $fname_err; ?></div>
-				</div>
-
-				<div id="lastname_div">
-					<input type="text" name="lastname" placeholder=" Lastname" value="<?php echo $lname; ?>" required="">
-					 <div id="lname_error"><?php echo $lname_err; ?></div>
-				</div>
-
-				<div id="username_div">
-					<input type="text" name="username" placeholder=" Username" value="<?php echo $username; ?>" required="">
-					 <div id="username_error" style="color:red;"><?php echo $username_err; ?></div>
-				</div>
-
-				<div id="email_div">
-					<input type="email" name="email" placeholder=" Email address" value="<?php echo $email; ?>" required="">
-					 <div id="email_error"> <?php echo $email_err; ?></div>
-				</div>
-
-				<div id="password_div">
-					<input type="password" name="password" placeholder=" Password" required="">
-					<div id="pass_error" style="color:red;"><?php echo $password_err; ?></div>
-				</div>
-
-
-				<div id="pass_confirm_div">
-					<input type="password" name="password_confirm" placeholder="Confirm Password" required="">
-					<div id="password_error" style="color:red;"><?php echo $confirm_password_err; ?></div>
-				</div>
-				
-				
-
-				<input id="reg" type="Submit"  value="Sign up">
-
-				<div id="register-alert">
-					<p>Have an account?</p>
-					<button type="button" onclick="window.location.href='signin.html'" value="signin">Sign in</button>
-				</div>
-			</form>
-			</div>
-
-			
-
-		</div>
-
+		<p>Thank you for Signing up.</p>
+		
 	</div>
 
 
@@ -146,9 +87,6 @@
         </div>
         </footer>
 
- 
-
-    <!-- <script type="text/javascript" src="js/script.js"></script> -->
 	<script type="text/javascript" src="js/signup.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/popper.min.js"></script>
